@@ -1,0 +1,26 @@
+{
+  "name": "nodejs_crash_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shoppinh/nodejs-blog.git"
+  },
+  "keywords": [
+    "nodejs",
+    "blog"
+  ],
+  "author": "kienneik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shoppinh/nodejs-blog/issues"
+  },
+  "homepage": "https://github.com/shoppinh/nodejs-blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
