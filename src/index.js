@@ -19,11 +19,18 @@ app.engine(
 );
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources\\views"));
+//Tin tuc view
 app.get("/tin-tuc", (req, res) => {
   res.render("news");
 });
+//Home view
 app.get("/", (req, res) => {
   res.render("home");
 });
 
+//Search view
+app.get("/search", (req, res) => {
+  console.log(req.query);
+  res.render("search");
+});
 app.listen(port, () => console.log(`Example app listen on ${port}`));
