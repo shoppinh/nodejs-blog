@@ -3,8 +3,9 @@ const express = require("express");
 const morgan = require("morgan");
 const handlebars = require("express-handlebars");
 const app = express();
-
 const port = 3000;
+const route = require("./routes");
+
 app.use(express.static(path.join(__dirname, "public")));
 
 //Body middleware
@@ -13,6 +14,7 @@ app.use(
     extended: true,
   })
 );
+
 app.use(express.json());
 //HTTP logger
 
@@ -26,23 +28,6 @@ app.engine(
 );
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources\\views"));
-//Tin tuc view
-app.get("/tin-tuc", (req, res) => {
-  res.render("news");
-});
-//Home view
-app.get("/", (req, res) => {
-  res.render("home");
-});
-
-//Search view
-app.get("/search", (req, res) => {
-  console.log(req.query);
-  res.render("search");
-});
-
-app.post("/search", (req, res) => {
-  console.log(req.body);
-  res.send("");
-});
+//route init
+route(app);
 app.listen(port, () => console.log(`Example app listen on ${port}`));
